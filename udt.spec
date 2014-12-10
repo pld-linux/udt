@@ -76,11 +76,10 @@ Dokumentacja API biblioteki UDT.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}}
+install -d $RPM_BUILD_ROOT{%{_libdir},%{_includedir}/udt}
 
 install src/{libudt.so,libudt.a} $RPM_BUILD_ROOT%{_libdir}
-cp -p src/udt.h $RPM_BUILD_ROOT%{_includedir}
-ln $RPM_BUILD_ROOT%{_includedir}/udt.h $RPM_BUILD_ROOT%{_includedir}/udt
+cp -p src/{udt,ccc,packet}.h $RPM_BUILD_ROOT%{_includedir}/udt
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -95,7 +94,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_includedir}/udt.h
 %{_includedir}/udt
 
 %files static
