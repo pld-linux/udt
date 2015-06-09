@@ -2,7 +2,7 @@ Summary:	UDP-based Data Transfer library
 Summary(pl.UTF-8):	UDT (UDP-based Data Transfer) - biblioteka transportu danych w oparciu o UDP
 Name:		udt
 Version:	4.11
-Release:	2
+Release:	3
 License:	BSD
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/udt/udt.sdk.%{version}.tar.gz
