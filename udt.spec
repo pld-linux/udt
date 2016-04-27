@@ -2,10 +2,10 @@ Summary:	UDP-based Data Transfer library
 Summary(pl.UTF-8):	UDT (UDP-based Data Transfer) - biblioteka transportu danych w oparciu o UDP
 Name:		udt
 Version:	4.11
-Release:	3
+Release:	4
 License:	BSD
 Group:		Libraries
-Source0:	http://downloads.sourceforge.net/udt/udt.sdk.%{version}.tar.gz
+Source0:	http://downloads.sourceforge.net/udt/%{name}.sdk.%{version}.tar.gz
 # Source0-md5:	30b1556e5cf0afe179e40a53a1371b08
 URL:		http://udt.sourceforge.net/
 BuildRequires:	libstdc++-devel
@@ -18,7 +18,7 @@ networks. UDT uses UDP to transfer bulk data with its own reliability
 control and congestion control mechanisms. The new protocol can
 transfer data at a much higher speed than TCP does. UDT is also a
 highly configurable framework that can accommodate various congestion
-control algorithms. 
+control algorithms.
 
 %description -l pl.UTF-8
 UDT to oparty na UDP wiarygodny protokół transportowy działający na
@@ -59,6 +59,9 @@ Statyczna biblioteka UDT.
 Summary:	UDT API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki UDT
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description apidocs
 API documentation for UDT library.
@@ -67,7 +70,7 @@ API documentation for UDT library.
 Dokumentacja API biblioteki UDT.
 
 %prep
-%setup -q -n udt4
+%setup -q -n %{name}4
 
 %{__sed} -i -e '/^CCFLAGS/s/ -O3/ %{rpmcxxflags}/;s/^C++ = .*/C++ = %{__cxx}/' src/Makefile app/Makefile
 
