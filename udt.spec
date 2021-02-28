@@ -59,9 +59,7 @@ Statyczna biblioteka UDT.
 Summary:	UDT API documentation
 Summary(pl.UTF-8):	Dokumentacja API biblioteki UDT
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description apidocs
 API documentation for UDT library.
